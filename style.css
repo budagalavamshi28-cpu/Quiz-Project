@@ -1,4 +1,137 @@
-button {
+body {
+    background: #f4f3fb;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card */
+.quiz-card {
+    background: #fff;
+    width: 380px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Progress section */
+/* .progress-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.circle-timer {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: conic-gradient(#5a4bff 0deg, #e6e6e6 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.circle-timer::before {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: white;
+    border-radius: 50%;
+}
+.circle-timer span {
+    position: relative;
+    z-index: 1;
+}
+/* Progress bar
+.progress-bar {
+    height: 6px;
+    background: #ddd;
+    border-radius: 10px;
+    margin: 15px 0;
+    transition: width 0.5s ease;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 30%;
+    background: #5a4bff;
+    border-radius: 10px;
+} */
+
+/* Question box */
+.question-box {
+    background: linear-gradient(135deg, #f8d7ff, #f1c6ff);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Options */
+/* Options container */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Each option box */
+.option-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #f1f1f1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Circle label (a, b, c, d) */
+.option-label {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.option-box:hover {
+    background: #e6e4ff;
+}
+
+/* Selected option */
+.option-box.active {
+    border: 2px solid #5a4bff;
+    background: #e6e4ff;
+}
+
+/* Button */
+.next-btn {
     width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #5a4bff;
+    color: white;
+    font-weight: bold;
     margin-top: 10px;
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    background: #4838e6;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Quiz</title>
 
@@ -9,22 +10,42 @@
     <!-- Your CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-light">
 
-<div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card p-4 shadow" style="width: 400px;">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="quiz-card">
+            <div class="header">
+                <h5>Quiz</h5>
+            </div>
 
-        <h5 id="question">Question here</h5>
+            <div class="position-relative mb-3 mx-auto" style="width: 70px; height: 70px;">
+                <div id="circleTimer" class="circle-timer d-flex justify-content-center align-items-center">
+                    <span id="timerText">30</span>
+                </div>
+            </div>
+            <div class="progress mb-3" role="progressbar" aria-label="Success example" aria-valuemin="0" aria-valuemax="100"
+                id="progressContainer">
+                
 
-        <div id="options" class="mt-3"></div>
+                <div class="progress-bar text-bg-success" id="progressBar">
+                    0%
+                </div>
+            </div>
 
-        <button class="btn btn-primary mt-3" onclick="nextQuestion()">Next</button>
+            <div class="question-box">
+                <p id="question">Question here</p>
+            </div>
 
+            <div id="options" class="options"></div>
+
+            <button class="btn btn-primary w-100 mt-3" onclick="nextQuestion()">Next</button>
+
+        </div>
     </div>
-</div>
 
-<script src="questions.js"></script>
-<script src="app.js"></script>
+    <script src="app.js"></script>
 
 </body>
+
 </html>
