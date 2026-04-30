@@ -59,26 +59,16 @@ function loadQuestion() {
     // Show options (Bootstrap buttons)
     let optionsHTML = "";
     q.options.forEach(option => {
-        //option == null fire alert
+        if (!option) {
+            alert("Select one answer!");
+            return;
+        }
         optionsHTML += `<button class="btn btn-outline-primary w-100 text-start mb-2" onclick="selectAnswer('${option}', this)">${option}</button>`;
     });
 
     document.getElementById("options").innerHTML = optionsHTML;
 
-    const progressBar = document.getElementById("progressBar");
-    const progressContainer = document.getElementById("progressContainer");
 
-    // Ensure value stays between 0 and 100
-    progressPercent = Math.round(((currentQuestion + 1) / questions.length) * 100);
-
-    // Update width (visual bar)
-    progressBar.style.width = progressPercent + "%";
-
-    // Update text inside bar
-    progressBar.textContent = progressPercent + "%";
-
-    // Update accessibility attribute
-    progressContainer.setAttribute("aria-valuenow", progressPercent);
 
 
 
@@ -102,21 +92,47 @@ function selectAnswer(selected, element) {
     if (selected === correct) {
         score++;
     }
+    const progressBar = document.getElementById("progressBar");
+    const progressContainer = document.getElementById("progressContainer");
+
+    // Ensure value stays between 0 and 100
+    progressPercent = Math.round(((currentQuestion + 1) / questions.length) * 100);
+
+    // Update width (visual bar)
+    progressBar.style.width = progressPercent + "%";
+
+    // Update text inside bar
+    progressBar.textContent = progressPercent + "%";
+
+    // Update accessibility attribute
+    progressContainer.setAttribute("aria-valuenow", progressPercent);
 }
 
 function nextQuestion() {
 
-    clearInterval(timerInterval); // 🔥 stop timer
+    if (questions[currentQuestion].selected == true) {
+        clearInterval(timerInterval); //stop timer
 
-    currentQuestion++;
+        currentQuestion++;
 
-    if (currentQuestion < questions.length) {
-        loadQuestion();
-    } else {
-        localStorage.setItem("score", score);
-        window.location.href = "result.html";
+        if (currentQuestion < questions.length) {
+            loadQuestion();
+        } else {
+            localStorage.setItem("score", score);
+            window.location.href = "result.html";
+        }
     }
-}
+    else {
+        alert("select the answer")
+    }
+function prevQuestion(){
+    if(currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+    }
 
-// Load first question
-loadQuestion();
+}
+    }
+
+    // Load first question
+    loadQuestion();
