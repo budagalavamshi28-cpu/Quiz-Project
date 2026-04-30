@@ -17,5 +17,5 @@ A simple interactive quiz application built using HTML, CSS, and JavaScript.
 1. Download the project
 2. Open index.html in your browser
 
-## Profile
-Click the link in about.
+## Live Demo
+Click the link : https://budagalavamshi28-cpu.github.io/Quiz-Project/
