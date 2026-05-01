@@ -16,3 +16,6 @@ A simple interactive quiz application built using HTML, CSS, and JavaScript.
 ## How to Run
 1. Download the project
 2. Open index.html in your browser
+
+## Live Demo
+Click the link : https://budagalavamshi28-cpu.github.io/Quiz-Project/

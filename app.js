@@ -24,7 +24,7 @@ const questions = [
         selected: false
     }
 ];
-// 🔥 TIMER FUNCTION
+// TIMER FUNCTION
 function startTimer() {
     clearInterval(timerInterval);
     timeLeft = 30;
@@ -72,7 +72,7 @@ function loadQuestion() {
 
 
 
-    // // 🔥 START TIMER EVERY QUESTION
+    // // START TIMER EVERY QUESTION
     startTimer();
 }
 
